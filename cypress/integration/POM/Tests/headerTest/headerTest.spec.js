@@ -1,4 +1,4 @@
-import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../Pages/HomePage/HomePage";
 
 // Background: The user navigates the Product Store Home page
@@ -21,5 +21,16 @@ When('the user clicks on Contact header link', () => {
 });
 
 Then('a modal with contact information should be display', () => {
-    HomePage.visiblecontactModal();
+    HomePage.visibleContactModal();
 });
+
+// Scenario 3 : The About Us header link is working properly on the Product Store Home page
+When('the user clicks on About Us header link', () => {
+    HomePage.clickAboutUsHeader();
+});
+
+Then('a modal with a video about BlazeMeter Demo Store should be display', () => {
+    HomePage.visibleAboutUsModal();
+    HomePage.visibleAboutUsvideo();
+});
+

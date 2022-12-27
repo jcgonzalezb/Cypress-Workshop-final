@@ -10,7 +10,9 @@ var pageLocators = {
     logInHeader: '#login2',
     signUpHeader: '#signin2',
     categoriesTitle: '#cat',
-    contactModal: '#exampleModal > .modal-dialog > .modal-content > .modal-header'
+    contactModal: '#exampleModal > .modal-dialog > .modal-content > .modal-header',
+    aboutUsModal: '#videoModal > .modal-dialog > .modal-content > .modal-header',
+    aboutUsVideo: '.vjs-poster'
     }
 
     class HomePage {
@@ -21,7 +23,9 @@ var pageLocators = {
     categoriesTitle() { return cy.get(pageLocators.categoriesTitle); }
     contactHeader() {return cy.get(pageLocators.contactHeader); }
     contactModal() { return cy.get(pageLocators.contactModal); }
-
+    aboutUsHeader() {return cy.get(pageLocators.aboutUsHeader); }
+    aboutUsModal() { return cy.get(pageLocators.aboutUsModal); }
+    aboutUsVideo() { return cy.get(pageLocators.aboutUsVideo); }
 
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
@@ -29,7 +33,10 @@ var pageLocators = {
     clickHomeHeader() { return this.homeHeader().click(); }
     visiblecategoriesTitle() { return this.categoriesTitle().should('be.visible'); }
     clickContactHeader() { return this.contactHeader().click(); }
-    visiblecontactModal() { return this.contactModal().should('be.visible'); }
+    visibleContactModal() { return this.contactModal().should('be.visible'); }
+    clickAboutUsHeader() { return this.aboutUsHeader().click(); }
+    visibleAboutUsModal() { return this.aboutUsModal().should('be.visible'); }
+    visibleAboutUsvideo() { return this.aboutUsVideo().should('be.visible'); }
     }
     
     const homePage = new HomePage();
