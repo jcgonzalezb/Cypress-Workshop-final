@@ -6,6 +6,7 @@ Feature: Manage TODO tasks
     Background:
         Given I visit the TODO homepage
 
+    @bar
     Scenario: Add a new TODO
         When I submit a new TODO "My Task #1"
         And I submit a new TODO "My Task #2"

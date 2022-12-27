@@ -1,4 +1,7 @@
 {
     "baseUrl": "https://example.cypress.io",
+    "env": {
+        "TAGS": "not @ignore"
+    },
     "testFiles": "**/*.feature"
 }
