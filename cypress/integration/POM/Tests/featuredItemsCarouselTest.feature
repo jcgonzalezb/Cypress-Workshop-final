@@ -1,8 +1,7 @@
-Feature: Manage the Featured Items Carousel
+Feature: The user wants to check the images in the Featured Items Carousel
 
-  In order to do have a great user experience,
-  the user should be able to use freely the 
-  Featured from the Product Store Home page.
+  In order to do have a great user experience, the user should be
+  able to use freely the Featured from the Product Store Home page.
 
   Background:
     Given the user navigates the Product Store Home page
@@ -18,7 +17,4 @@ Feature: Manage the Featured Items Carousel
   Scenario: The Featured Items Carousel returns the first image after two clicks on the right arrow
     When the user clicks twice on the right arrow of the Carousel
     Then the image on the Carousel should be the same as the first one
-
-  
-
 
