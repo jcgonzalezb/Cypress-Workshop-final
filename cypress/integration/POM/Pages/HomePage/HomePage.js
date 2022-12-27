@@ -9,7 +9,8 @@ var pageLocators = {
     cartHeader: '#cartur',
     logInHeader: '#login2',
     signUpHeader: '#signin2',
-    categoriesTitle: '#cat'
+    categoriesTitle: '#cat',
+    contactModal: '#exampleModal > .modal-dialog > .modal-content > .modal-header'
     }
 
     class HomePage {
@@ -18,13 +19,17 @@ var pageLocators = {
     rightArrowCarousel() { return cy.get(pageLocators.rightArrowCarousel); }
     homeHeader() {return cy.get(pageLocators.homeHeader); }
     categoriesTitle() { return cy.get(pageLocators.categoriesTitle); }
+    contactHeader() {return cy.get(pageLocators.contactHeader); }
+    contactModal() { return cy.get(pageLocators.contactModal); }
+
 
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
     clickRightArrowCarousel() { return this.rightArrowCarousel().click(); }
-    clickHomeHeader() { return this.homeHeader().click(); } 
+    clickHomeHeader() { return this.homeHeader().click(); }
     visiblecategoriesTitle() { return this.categoriesTitle().should('be.visible'); }
-
+    clickContactHeader() { return this.contactHeader().click(); }
+    visiblecontactModal() { return this.contactModal().should('be.visible'); }
     }
     
     const homePage = new HomePage();

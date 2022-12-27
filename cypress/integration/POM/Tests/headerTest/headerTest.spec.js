@@ -15,3 +15,11 @@ Then('the Categories title should be display', () => {
     HomePage.visiblecategoriesTitle();
 });
 
+// Scenario 2 : The Contact header link is working properly on the Product Store Home page
+When('the user clicks on Contact header link', () => {
+    HomePage.clickContactHeader();
+});
+
+Then('a modal with contact information should be display', () => {
+    HomePage.visiblecontactModal();
+});
