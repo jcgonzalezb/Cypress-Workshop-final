@@ -26,6 +26,7 @@ var pageLocators = {
     aboutUsHeader() {return cy.get(pageLocators.aboutUsHeader); }
     aboutUsModal() { return cy.get(pageLocators.aboutUsModal); }
     aboutUsVideo() { return cy.get(pageLocators.aboutUsVideo); }
+    cartHeader() { return cy.get(pageLocators.cartHeader); }
 
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
@@ -37,6 +38,8 @@ var pageLocators = {
     clickAboutUsHeader() { return this.aboutUsHeader().click(); }
     visibleAboutUsModal() { return this.aboutUsModal().should('be.visible'); }
     visibleAboutUsvideo() { return this.aboutUsVideo().should('be.visible'); }
+    clickCartHeader() { return this.cartHeader().click(); }
+    
     }
     
     const homePage = new HomePage();

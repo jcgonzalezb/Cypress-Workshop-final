@@ -7,14 +7,17 @@ Feature: The user wants to check the navigation of all the headers links in the 
     Given the user navigates the Product Store Home page
 
   Scenario: The Home header link is working properly on the Product Store Home page
-    When the user clicks on Home header link
+    When the user navegates again to the Home page
     Then the Categories title should be display
 
   Scenario: The Contact header link is working properly on the Product Store Home page
-    When the user clicks on Contact header link
+    When the user navegates to the Contact modal
     Then a modal with contact information should be display
 
   Scenario: The About Us header link is working properly on the Product Store Home page
-    When the user clicks on About Us header link
+    When the user navegates to the About Us modal
     Then a modal with a video about BlazeMeter Demo Store should be display
 
+  Scenario: The Cart header link is working properly on the Product Store Home page
+    When the user navegates to the Cart page
+    Then the Products title should be display on the Cart page
