@@ -1,15 +1,13 @@
 import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../Pages/HomePage/HomePage";
 
-
-
 // Scenario 1 : The phones category shows all the phones in the store
 Given('the user navigates the Product Store Home page', () => {
     cy.visit('/');
 });
 
 When('the user selects the Phones category', () => {
-    HomePage.clickPhoneCategory();
+    HomePage.clickPhonesCategory();
 });
 
 Then('all the phones in the store should be visible', () => {
@@ -30,4 +28,23 @@ Then('all the phones in the store should be visible', () => {
 });
 
 
+// Scenario 2 : The laptops category shows all the laptops in the store
+Given('the user navigates the Product Store Home page', () => {
+    cy.visit('/');
+});
+
+When('the user selects the Laptops category', () => {
+    HomePage.clickLaptopsCategory();
+});
+
+Then('all the laptops in the store should be visible', () => {
+    HomePage.visibleLaptopSonyVaioI5();
+    HomePage.textLaptopSonyVaioI5();
+    HomePage.visibleLaptopSonyVaioI7();
+    HomePage.textLaptopSonyVaioI7();
+    HomePage.visibleLaptopMacBookAir();
+    HomePage.textLaptopMacBookAir();
+    HomePage.visibleLaptopDellI78gb();
+    HomePage.textLaptopDellI78gb();
+});
 

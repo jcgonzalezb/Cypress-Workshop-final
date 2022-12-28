@@ -8,3 +8,8 @@ Feature: The user wants to check the buying experience in the Product Store site
     Given the user navigates the Product Store Home page
     When the user selects the Phones category
     Then all the phones in the store should be visible
+
+  Scenario: The laptops category shows all the laptops in the store
+    Given the user navigates the Product Store Home page
+    When the user selects the Laptops category
+    Then all the laptops in the store should be visible
