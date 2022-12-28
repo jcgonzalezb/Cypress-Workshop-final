@@ -1,11 +1,14 @@
-import { Given, When, Then } from "cypress-cucumber-preprocessor/steps";
+import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../Pages/HomePage/HomePage";
+import SamsungGalaxyS6 from "../../Pages/Phones/SamsungGalaxyS6";
 
-// Scenario 1 : The phones category shows all the phones in the store
+// Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
     cy.visit('/');
 });
 
+
+// Scenario 1 : The phones category shows all the phones in the store
 When('the user selects the Phones category', () => {
     HomePage.clickPhonesCategory();
 });
@@ -29,10 +32,6 @@ Then('all the phones in the store should be visible', () => {
 
 
 // Scenario 2 : The laptops category shows all the laptops in the store
-Given('the user navigates the Product Store Home page', () => {
-    cy.visit('/');
-});
-
 When('the user selects the Laptops category', () => {
     HomePage.clickLaptopsCategory();
 });
@@ -54,10 +53,6 @@ Then('all the laptops in the store should be visible', () => {
 
 
 // Scenario 3 : The monitors category shows all the monitors in the store
-Given('the user navigates the Product Store Home page', () => {
-    cy.visit('/');
-});
-
 When('the user selects the Monitors category', () => {
     HomePage.clickMonitorsCategory();
 });
@@ -69,4 +64,23 @@ Then('all the monitors in the store should be visible', () => {
     HomePage.textMonitorASUSFullHD();
 });
 
+// Scenario 4 : The user selects different products and makes a purchase
+When('the user selects different products from the store', () => {
+    HomePage.clickPhonesCategory();
+    HomePage.visiblePhoneSamsungGalaxyS6();
+    HomePage.textPhoneSamsungGalaxyS6();
+    HomePage.clickPhoneSamsungGalaxyS6Pic();
+    SamsungGalaxyS6.visibleProductName();
+    SamsungGalaxyS6.textProductName();
+    SamsungGalaxyS6.clickAddToCartButton();
+    SamsungGalaxyS6.clickCartHeader();
 
+});
+
+And('removes one product from the cart', () => {
+
+});
+
+Then('purchases the products from the store', () => {
+
+});

@@ -39,7 +39,12 @@ var pageLocators = {
     laptopMacBookPro: ':nth-child(6) > .card > .card-block > .card-title > .hrefch',
     monitorsCategory: '[onclick="byCat(\'monitor\')"]',
     monitorAppleMonitor24: ':nth-child(1) > .card > .card-block > .card-title > .hrefch',
-    monitorASUSFullHD: ':nth-child(2) > .card > .card-block > .card-title > .hrefch'
+    monitorASUSFullHD: ':nth-child(2) > .card > .card-block > .card-title > .hrefch',
+    phoneSamsungGalaxyS6Pic: ':nth-child(1) > .card > :nth-child(1) > .card-img-top'
+
+
+
+
     }
 
     class HomePage {
@@ -67,6 +72,7 @@ var pageLocators = {
     passwordTitleSignUp() { return cy.get(pageLocators.passwordTitleSignUp); }
     phonesCategory() { return cy.get(pageLocators.phonesCategory); }
     phoneSamsungGalaxyS6() { return cy.get(pageLocators.phoneSamsungGalaxyS6); }
+    phoneSamsungGalaxyS6Pic() { return cy.get(pageLocators.phoneSamsungGalaxyS6Pic); }
     phoneNokiaLumia1520() { return cy.get(pageLocators.phoneNokiaLumia1520); }
     phoneNexus6() { return cy.get(pageLocators.phoneNexus6); }
     phoneSamsungGalaxyS7() { return cy.get(pageLocators.phoneSamsungGalaxyS7); }
@@ -83,6 +89,8 @@ var pageLocators = {
     monitorsCategory() { return cy.get(pageLocators.monitorsCategory); }
     monitorAppleMonitor24() { return cy.get(pageLocators.monitorAppleMonitor24); }
     monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
+
+
     
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
@@ -148,6 +156,9 @@ var pageLocators = {
     textMonitorAppleMonitor24() { return this.monitorAppleMonitor24().should('have.text', 'Apple monitor 24'); }
     visibleMonitorASUSFullHD() { return this.monitorASUSFullHD().should('be.visible'); }
     textMonitorASUSFullHD() { return this.monitorASUSFullHD().should('have.text', 'ASUS Full HD'); }
+
+    clickPhoneSamsungGalaxyS6Pic() { return this.phoneSamsungGalaxyS6Pic().click(); }
+
 
 }
     
