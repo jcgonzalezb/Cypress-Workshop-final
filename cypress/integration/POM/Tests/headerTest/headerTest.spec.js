@@ -54,8 +54,22 @@ When('the user navegates to the Log in modal', () => {
 Then('a modal with Log in, Username and Password titles should be display', () => {
     HomePage.visibleLogInModalLabel();
     HomePage.textLogInModalLabel();
-    HomePage.visibleUsernameTitle();
-    HomePage.textUsernameTitle();
-    HomePage.visiblePasswordTitle();
-    HomePage.textPasswordTitle();
+    HomePage.visibleUsernameTitleLogIn();
+    HomePage.textUsernameTitleLogIn();
+    HomePage.visiblePasswordTitleLogIn();
+    HomePage.textPasswordTitleLogIn();
+});
+
+// Scenario 6 : The Sign up header link is working properly on the Product Store Home page
+When('the user navegates to the Sign up modal', () => {
+    HomePage.clickSignUpHeader();
+});
+
+Then('a modal with Sign up, Username and Password titles should be display', () => {
+    HomePage.visibleSignInModalLabel();
+    HomePage.textSignInModalLabel();
+    HomePage.visibleUsernameTitleSignUp();
+    HomePage.textUsernameTitleSignUp();
+    HomePage.visiblePasswordTitleSignUp();
+    HomePage.textPasswordTitleSignUp();
 });

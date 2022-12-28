@@ -14,9 +14,12 @@ var pageLocators = {
     aboutUsModal: '#videoModal > .modal-dialog > .modal-content > .modal-header',
     aboutUsVideo: '.vjs-poster',
     logInModalLabel: '#logInModalLabel',
-    usernameTitle: '#logInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(1) > .form-control-label',
-    passwordTitle: '#logInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(2) > .form-control-label'
-    }
+    usernameTitleLogIn: '#logInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(1) > .form-control-label',
+    passwordTitleLogIn: '#logInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(2) > .form-control-label',
+    signInModalLabel: '#signInModalLabel',
+    usernameTitleSignUp: '#signInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(1) > .form-control-label',
+    passwordTitleSignUp: '#signInModal > .modal-dialog > .modal-content > .modal-body > form > :nth-child(2) > .form-control-label'
+}
 
     class HomePage {
     featuredItemCarousel() { return cy.get(pageLocators.featuredItemCarousel); }
@@ -32,8 +35,12 @@ var pageLocators = {
     cartHeader() { return cy.get(pageLocators.cartHeader); }
     logInHeader() { return cy.get(pageLocators.logInHeader); }
     logInModalLabel() { return cy.get(pageLocators.logInModalLabel); }
-    usernameTitle() { return cy.get(pageLocators.usernameTitle); }
-    passwordTitle() { return cy.get(pageLocators.passwordTitle); }
+    usernameTitleLogIn() { return cy.get(pageLocators.usernameTitleLogIn); }
+    passwordTitleLogIn() { return cy.get(pageLocators.passwordTitleLogIn); }
+    signUpHeader() { return cy.get(pageLocators.signUpHeader); }
+    signInModalLabel() { return cy.get(pageLocators.signInModalLabel); }
+    usernameTitleSignUp() { return cy.get(pageLocators.usernameTitleSignUp); }
+    passwordTitleSignUp() { return cy.get(pageLocators.passwordTitleSignUp); }
 
 
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
@@ -50,10 +57,17 @@ var pageLocators = {
     clickLogInHeader() { return this.logInHeader().click(); }
     visibleLogInModalLabel() { return this.logInModalLabel().should('be.visible'); }
     textLogInModalLabel() { return this.logInModalLabel().should('have.text', 'Log in'); }
-    visibleUsernameTitle() { return this.usernameTitle().should('be.visible'); }
-    textUsernameTitle() { return this.usernameTitle().should('have.text', 'Username:'); }
-    visiblePasswordTitle() { return this.passwordTitle().should('be.visible'); }
-    textPasswordTitle() { return this.passwordTitle().should('have.text', 'Password:'); }
+    visibleUsernameTitleLogIn() { return this.usernameTitleLogIn().should('be.visible'); }
+    textUsernameTitleLogIn() { return this.usernameTitleLogIn().should('have.text', 'Username:'); }
+    visiblePasswordTitleLogIn() { return this.passwordTitleLogIn().should('be.visible'); }
+    textPasswordTitleLogIn() { return this.passwordTitleLogIn().should('have.text', 'Password:'); }
+    clickSignUpHeader() { return this.signUpHeader().click(); }
+    visibleSignInModalLabel() { return this.signInModalLabel().should('be.visible'); }
+    textSignInModalLabel() { return this.signInModalLabel().should('have.text', 'Sign up'); }
+    visibleUsernameTitleSignUp() { return this.usernameTitleSignUp().should('be.visible'); }
+    textUsernameTitleSignUp() { return this.usernameTitleSignUp().should('have.text', 'Username:'); }
+    visiblePasswordTitleSignUp() { return this.passwordTitleSignUp().should('be.visible'); }
+    textPasswordTitleSignUp() { return this.passwordTitleSignUp().should('have.text', 'Password:'); }
     }
     
     const homePage = new HomePage();

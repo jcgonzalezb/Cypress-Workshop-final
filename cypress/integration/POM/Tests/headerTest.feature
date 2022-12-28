@@ -25,3 +25,7 @@ Feature: The user wants to check the navigation of all the headers links in the 
   Scenario: The Log In header link is working properly on the Product Store Home page
     When the user navegates to the Log in modal
     Then a modal with Log in, Username and Password titles should be display
+
+  Scenario: The Sign up header link is working properly on the Product Store Home page
+    When the user navegates to the Sign up modal
+    Then a modal with Sign up, Username and Password titles should be display
