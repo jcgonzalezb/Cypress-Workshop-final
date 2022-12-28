@@ -35,7 +35,7 @@ var pageLocators = {
     laptopSonyVaioI7: ':nth-child(2) > .card > .card-block > .card-title > .hrefch',
     laptopMacBookAir: ':nth-child(3) > .card > .card-block > .card-title > .hrefch',
     laptopDellI78gb: ':nth-child(4) > .card > .card-block > .card-title > .hrefch',
-    laptop2017Dell15_6Inch: ':nth-child(5) > .card > .card-block > .card-title > .hrefch',
+    laptop2017Dell156Inch: ':nth-child(5) > .card > .card-block > .card-title > .hrefch',
     laptopMacBookPro: ':nth-child(6) > .card > .card-block > .card-title > .hrefch'
     }
 
@@ -75,11 +75,8 @@ var pageLocators = {
     laptopSonyVaioI7() { return cy.get(pageLocators.laptopSonyVaioI7); }
     laptopMacBookAir() { return cy.get(pageLocators.laptopMacBookAir); }
     laptopDellI78gb() { return cy.get(pageLocators.laptopDellI78gb); }
-
-
-
-
-
+    laptop2017Dell156Inch() { return cy.get(pageLocators.laptop2017Dell156Inch); }
+    laptopMacBookPro() { return cy.get(pageLocators.laptopMacBookPro); }
 
     
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
@@ -137,7 +134,10 @@ var pageLocators = {
     textLaptopMacBookAir() { return this.laptopMacBookAir().should('have.text', 'MacBook air'); }
     visibleLaptopDellI78gb() { return this.laptopDellI78gb().should('be.visible'); }
     textLaptopDellI78gb() { return this.laptopDellI78gb().should('have.text', 'Dell i7 8gb'); }
-
+    visibleLaptop2017Dell156Inch() { return this.laptop2017Dell156Inch().should('be.visible'); }
+    textLaptop2017Dell156Inch() { return this.laptop2017Dell156Inch().should('have.text', '2017 Dell 15.6 Inch'); }
+    visibleLaptopMacBookPro() { return this.laptopMacBookPro().should('be.visible'); }
+    textLaptopMacBookPro() { return this.laptopMacBookPro().should('have.text', 'MacBook Pro'); }
 
     
 }

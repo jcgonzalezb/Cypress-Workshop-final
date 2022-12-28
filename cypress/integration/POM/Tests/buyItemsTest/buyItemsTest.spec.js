@@ -46,5 +46,9 @@ Then('all the laptops in the store should be visible', () => {
     HomePage.textLaptopMacBookAir();
     HomePage.visibleLaptopDellI78gb();
     HomePage.textLaptopDellI78gb();
+    HomePage.visibleLaptop2017Dell156Inch();
+    HomePage.textLaptop2017Dell156Inch();
+    HomePage.visibleLaptopMacBookPro();
+    HomePage.textLaptopMacBookPro();
 });
 
