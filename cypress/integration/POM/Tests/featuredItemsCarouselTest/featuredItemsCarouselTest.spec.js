@@ -7,14 +7,16 @@ Given('the user navigates the Product Store Home page', () => {
 });
 
 // Scenario 1 : The carousel indicators on the Featured Items Carousel are working properly
-When('the user clicks on two indicators on the Carousel', () => {
+When('the user clicks on several indicators on the Carousel', () => {
     HomePage.clickCarouselIndicatorOne();
     HomePage.clickCarouselIndicatorTwo();
+    HomePage.clickCarouselIndicatorZero();
+    HomePage.clickCarouselIndicatorOne();
 });
 
-Then('indicators zero and one should be visible', () => {
+Then('indicators zero and two should be visible', () => {
     HomePage.visibleCarouselIndicatorZero();
-    HomePage.visibleCarouselIndicatorOne();
+    HomePage.visibleCarouselIndicatorTwo();
 });
 
 
@@ -31,15 +33,14 @@ Then('the image on the Carousel should be the same as the first one', () => {
     HomePage.visibleCarouselIndicatorTwo();
 });
 
-// Scenario 3 : The Featured Items Carousel returns the first image after three clicks on the right arrow
-When('the user clicks three times on the right arrow of the Carousel', () => {
-    HomePage.clickRightArrowCarousel();
+// Scenario 3 : The Featured Items Carousel returns the third image after two clicks on the right arrow
+When('the user clicks two times on the right arrow of the Carousel', () => {
     HomePage.clickRightArrowCarousel();
     HomePage.clickRightArrowCarousel();
 });
 
-Then('the image on the Carousel should be the same as the first one', () => {
+Then('the image on the Carousel should be the third one on the Carousel', () => {
+    HomePage.visibleCarouselIndicatorZero();
     HomePage.visibleCarouselIndicatorOne();
-    HomePage.visibleCarouselIndicatorTwo();
 });
 
