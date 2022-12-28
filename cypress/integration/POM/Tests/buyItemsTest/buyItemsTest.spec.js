@@ -52,3 +52,21 @@ Then('all the laptops in the store should be visible', () => {
     HomePage.textLaptopMacBookPro();
 });
 
+
+// Scenario 3 : The monitors category shows all the monitors in the store
+Given('the user navigates the Product Store Home page', () => {
+    cy.visit('/');
+});
+
+When('the user selects the Monitors category', () => {
+    HomePage.clickMonitorsCategory();
+});
+
+Then('all the monitors in the store should be visible', () => {
+    HomePage.visibleMonitorAppleMonitor24();
+    HomePage.textMonitorAppleMonitor24();
+    HomePage.visibleMonitorASUSFullHD();
+    HomePage.textMonitorASUSFullHD();
+});
+
+

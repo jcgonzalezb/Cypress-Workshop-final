@@ -36,7 +36,10 @@ var pageLocators = {
     laptopMacBookAir: ':nth-child(3) > .card > .card-block > .card-title > .hrefch',
     laptopDellI78gb: ':nth-child(4) > .card > .card-block > .card-title > .hrefch',
     laptop2017Dell156Inch: ':nth-child(5) > .card > .card-block > .card-title > .hrefch',
-    laptopMacBookPro: ':nth-child(6) > .card > .card-block > .card-title > .hrefch'
+    laptopMacBookPro: ':nth-child(6) > .card > .card-block > .card-title > .hrefch',
+    monitorsCategory: '[onclick="byCat(\'monitor\')"]',
+    monitorAppleMonitor24: ':nth-child(1) > .card > .card-block > .card-title > .hrefch',
+    monitorASUSFullHD: ':nth-child(2) > .card > .card-block > .card-title > .hrefch'
     }
 
     class HomePage {
@@ -77,7 +80,9 @@ var pageLocators = {
     laptopDellI78gb() { return cy.get(pageLocators.laptopDellI78gb); }
     laptop2017Dell156Inch() { return cy.get(pageLocators.laptop2017Dell156Inch); }
     laptopMacBookPro() { return cy.get(pageLocators.laptopMacBookPro); }
-
+    monitorsCategory() { return cy.get(pageLocators.monitorsCategory); }
+    monitorAppleMonitor24() { return cy.get(pageLocators.monitorAppleMonitor24); }
+    monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
     
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
@@ -138,8 +143,12 @@ var pageLocators = {
     textLaptop2017Dell156Inch() { return this.laptop2017Dell156Inch().should('have.text', '2017 Dell 15.6 Inch'); }
     visibleLaptopMacBookPro() { return this.laptopMacBookPro().should('be.visible'); }
     textLaptopMacBookPro() { return this.laptopMacBookPro().should('have.text', 'MacBook Pro'); }
+    clickMonitorsCategory() { return this.monitorsCategory().click(); }
+    visibleMonitorAppleMonitor24() { return this.monitorAppleMonitor24().should('be.visible'); }
+    textMonitorAppleMonitor24() { return this.monitorAppleMonitor24().should('have.text', 'Apple monitor 24'); }
+    visibleMonitorASUSFullHD() { return this.monitorASUSFullHD().should('be.visible'); }
+    textMonitorASUSFullHD() { return this.monitorASUSFullHD().should('have.text', 'ASUS Full HD'); }
 
-    
 }
     
     const homePage = new HomePage();
