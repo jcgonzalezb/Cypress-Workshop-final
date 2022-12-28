@@ -21,10 +21,12 @@ Then('all the phones in the store should be visible', () => {
     HomePage.textPhoneNexus6();
     HomePage.visiblePhoneSamsungGalaxyS7();
     HomePage.textPhoneSamsungGalaxyS7();
-
-
-
-
+    HomePage.visiblePhoneIphone632gb();
+    HomePage.textPhoneIphone632gb();
+    HomePage.visiblePhoneSonyXperiaZ5();
+    HomePage.textPhoneSonyXperiaZ5();
+    HomePage.visiblePhoneHTCOneM9();
+    HomePage.textPhoneHTCOneM9();
 });
 
 

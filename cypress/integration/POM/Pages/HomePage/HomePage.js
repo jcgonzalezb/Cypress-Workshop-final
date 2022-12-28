@@ -29,9 +29,7 @@ var pageLocators = {
     phoneSamsungGalaxyS7: ':nth-child(4) > .card > .card-block > .card-title > .hrefch',
     phoneIphone632gb: ':nth-child(5) > .card > .card-block > .card-title > .hrefch',
     phoneSonyXperiaZ5: ':nth-child(6) > .card > .card-block > .card-title > .hrefch',
-    phoneHTCOneM9: ':nth-child(6) > .card > .card-block > .card-title > .hrefch'
-
-
+    phoneHTCOneM9: ':nth-child(7) > .card > .card-block > .card-title > .hrefch'
     }
 
     class HomePage {
@@ -66,7 +64,6 @@ var pageLocators = {
     phoneSonyXperiaZ5() { return cy.get(pageLocators.phoneSonyXperiaZ5); }
     phoneHTCOneM9() { return cy.get(pageLocators.phoneHTCOneM9); }
     
-
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
     clickRightArrowCarousel() { return this.rightArrowCarousel().click(); }
@@ -107,6 +104,13 @@ var pageLocators = {
     textPhoneNexus6() { return this.phoneNexus6().should('have.text', 'Nexus 6'); }
     visiblePhoneSamsungGalaxyS7() { return this.phoneSamsungGalaxyS7().should('be.visible'); }
     textPhoneSamsungGalaxyS7() { return this.phoneSamsungGalaxyS7().should('have.text', 'Samsung galaxy s7'); }
+    visiblePhoneIphone632gb() { return this.phoneIphone632gb().should('be.visible'); }
+    textPhoneIphone632gb() { return this.phoneIphone632gb().should('have.text', 'Iphone 6 32gb'); }
+    visiblePhoneSonyXperiaZ5() { return this.phoneSonyXperiaZ5().should('be.visible'); }
+    textPhoneSonyXperiaZ5() { return this.phoneSonyXperiaZ5().should('have.text', 'Sony xperia z5'); }
+    visiblePhoneHTCOneM9() { return this.phoneHTCOneM9().should('be.visible'); }
+    textPhoneHTCOneM9() { return this.phoneHTCOneM9().should('have.text', 'HTC One M9'); }
+
 
 
 
