@@ -14,7 +14,7 @@ When('the user navegates again to the Home page', () => {
 });
 
 Then('the Categories title should be display', () => {
-    HomePage.visiblecategoriesTitle();
+    HomePage.visibleCategoriesTitle();
 });
 
 // Scenario 2 : The Contact header link is working properly on the Product Store Home page

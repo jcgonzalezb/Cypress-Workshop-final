@@ -3,6 +3,9 @@ var pageLocators = {
     featuredItemCarousel: '.active > .d-block',
     leftArrowCarousel: '.carousel-control-prev-icon',
     rightArrowCarousel: '.carousel-control-next-icon',
+    carouselIndicatorZero: '[data-slide-to="0"]',
+    carouselIndicatorOne: '[data-slide-to="1"]',
+    carouselIndicatorTwo: '[data-slide-to="2"]',
     homeHeader: '.active > .nav-link',
     contactHeader: ':nth-child(2) > .nav-link',
     aboutUsHeader: ':nth-child(3) > .nav-link',
@@ -25,6 +28,9 @@ var pageLocators = {
     featuredItemCarousel() { return cy.get(pageLocators.featuredItemCarousel); }
     leftArrowCarousel() { return cy.get(pageLocators.leftArrowCarousel); }
     rightArrowCarousel() { return cy.get(pageLocators.rightArrowCarousel); }
+    carouselIndicatorZero() { return cy.get(pageLocators.carouselIndicatorZero); }
+    carouselIndicatorOne() { return cy.get(pageLocators.carouselIndicatorOne); }
+    carouselIndicatorTwo() { return cy.get(pageLocators.carouselIndicatorTwo); }
     homeHeader() {return cy.get(pageLocators.homeHeader); }
     categoriesTitle() { return cy.get(pageLocators.categoriesTitle); }
     contactHeader() {return cy.get(pageLocators.contactHeader); }
@@ -46,8 +52,14 @@ var pageLocators = {
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
     clickRightArrowCarousel() { return this.rightArrowCarousel().click(); }
+    clickCarouselIndicatorZero() { return this.carouselIndicatorZero().click(); }
+    visibleCarouselIndicatorZero() { return this.carouselIndicatorZero().should('be.visible'); }
+    clickCarouselIndicatorOne() { return this.carouselIndicatorOne().click(); }
+    visibleCarouselIndicatorOne() { return this.carouselIndicatorOne().should('be.visible'); }
+    clickCarouselIndicatorTwo() { return this.carouselIndicatorTwo().click(); }
+    visibleCarouselIndicatorTwo() { return this.carouselIndicatorTwo().should('be.visible'); }
     clickHomeHeader() { return this.homeHeader().click(); }
-    visiblecategoriesTitle() { return this.categoriesTitle().should('be.visible'); }
+    visibleCategoriesTitle() { return this.categoriesTitle().should('be.visible'); }
     clickContactHeader() { return this.contactHeader().click(); }
     visibleContactModal() { return this.contactModal().should('be.visible'); }
     clickAboutUsHeader() { return this.aboutUsHeader().click(); }
