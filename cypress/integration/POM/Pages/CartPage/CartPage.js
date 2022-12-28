@@ -7,7 +7,7 @@ var pageLocators = {
     productsTitle() { return cy.get(pageLocators.productsTitle); }
 
     visibleProductsTitle() { return this.productsTitle().should('be.visible'); }
-    textTitleProducts() { return this.productsTitle().should('have.text', 'Products'); }
+    textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }
     }
     
     const cartPage = new CartPage();

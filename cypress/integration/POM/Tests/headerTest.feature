@@ -21,3 +21,7 @@ Feature: The user wants to check the navigation of all the headers links in the 
   Scenario: The Cart header link is working properly on the Product Store Home page
     When the user navegates to the Cart page
     Then the Products title should be display on the Cart page
+
+  Scenario: The Log In header link is working properly on the Product Store Home page
+    When the user navegates to the Log in modal
+    Then a modal with Log in, Username and Password titles should be display

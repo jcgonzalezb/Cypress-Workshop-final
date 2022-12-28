@@ -43,6 +43,19 @@ When('the user navegates to the Cart page', () => {
 
 Then('the Products title should be display on the Cart page', () => {
     CartPage.visibleProductsTitle();
-    CartPage.textTitleProducts();
+    CartPage.textProductsTitle();
 });
 
+// Scenario 5 : The Log In header link is working properly on the Product Store Home page
+When('the user navegates to the Log in modal', () => {
+    HomePage.clickLogInHeader();
+});
+
+Then('a modal with Log in, Username and Password titles should be display', () => {
+    HomePage.visibleLogInModalLabel();
+    HomePage.textLogInModalLabel();
+    HomePage.visibleUsernameTitle();
+    HomePage.textUsernameTitle();
+    HomePage.visiblePasswordTitle();
+    HomePage.textPasswordTitle();
+});
