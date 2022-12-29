@@ -5,7 +5,7 @@ import CartPage from "../../Pages/CartPage/CartPage";
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
-    cy.visit('/');
+    HomePage.waitForHomePageSuccessfulResponse();
 });
 
 // Scenario 1 : The Home header link is working properly on the Product Store Home page

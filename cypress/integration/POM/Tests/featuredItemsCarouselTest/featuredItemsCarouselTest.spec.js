@@ -3,7 +3,7 @@ import HomePage from "../../Pages/HomePage/HomePage";
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
-    cy.visit('/');
+    HomePage.waitForHomePageSuccessfulResponse();
 });
 
 // Scenario 1 : The carousel indicators on the Featured Items Carousel are working properly

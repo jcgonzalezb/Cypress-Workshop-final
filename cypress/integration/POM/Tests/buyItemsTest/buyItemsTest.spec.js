@@ -15,7 +15,7 @@ const newYear = '25'
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
-    cy.visit('/');
+    HomePage.waitForHomePageSuccessfulResponse();
 });
 
 
@@ -125,15 +125,16 @@ Then('purchases the products from the store', () => {
     CartPage.orderModalHeaderDisplay();
     CartPage.orderModalLabelDisplay();
     //CartPage.visibleInputName();
-
     //CartPage.cleanInputName();
+    //CartPage.clickParentModal();
     CartPage.purchaseInputName(newName);
-    CartPage.clickInputName();
+    //CartPage.clickParentModal();
+    //CartPage.clickInputName();
     //CartPage.visibleInputCountry();
     //CartPage.inputCountryDisplay();
     //CartPage.cleanInputCountry();
     //CartPage.clickPlaceOrderButton();
     CartPage.purchaseInputCountry(newCountry);
-    CartPage.clickInputCountry();
-    
+    //CartPage.clickInputCountry();
+    CartPage.purchaseInputCity(newCity);
 });

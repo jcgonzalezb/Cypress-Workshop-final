@@ -18,7 +18,6 @@ var pageLocators = {
     productsTitle() { return cy.get(pageLocators.productsTitle); }
     deleteFirstItem() { return cy.get(pageLocators.deleteFirstItem); }
     placeOrderButton() { return cy.get(pageLocators.placeOrderButton); }
-    orderModal() { return cy.get(pageLocators.orderModal); }
     orderModalHeader() { return cy.get(pageLocators.orderModalHeader); }
     orderModalLabel() { return cy.get(pageLocators.orderModalLabel); }
     inputName() { return cy.get(pageLocators.inputName); }
@@ -33,18 +32,22 @@ var pageLocators = {
     textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }
     clickDeleteFirstItem() { return this.deleteFirstItem().click(); }
     clickPlaceOrderButton() { return this.placeOrderButton().click(); }
+    clickParentModal() {return this.orderModalHeader().parent().parent().parent().click() }
     orderModalHeaderDisplay() { return this.orderModalHeader().should('not.have.css', 'display', 'none'); }
     orderModalLabelDisplay() { return this.orderModalLabel().should('not.have.css', 'display', 'none'); }
     visibleInputName() { return this.inputName().should('be.visible'); }
     clickInputName() { return this.inputName().click(); }
     cleanInputName() { return this.inputName().clear(); }
-    purchaseInputName(name) { return this.inputName().type(name + '{end}'); }
+    purchaseInputName(name) { return this.inputName().type(name); }
 
     inputCountryDisplay() { return this.inputCountry().should('not.have.css', 'display', 'none'); }
     visibleInputCountry() { return this.inputCountry().should('be.visible'); }
     clickInputCountry() { return this.inputCountry().click(); }
     cleanInputCountry() { return this.inputCountry().clear(); }
-    purchaseInputCountry(country) { return this.inputCountry().type(country + '{end}'); }
+    purchaseInputCountry(country) { return this.inputCountry().type(country); }
+    purchaseInputCity(city) { return this.inputCountry().type(city); }
+
+
 
 
 

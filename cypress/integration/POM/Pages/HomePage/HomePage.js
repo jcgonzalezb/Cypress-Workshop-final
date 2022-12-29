@@ -58,6 +58,14 @@ var localPath = {
     }
 
     class HomePage {
+    waitForHomePageSuccessfulResponse() { 
+        cy.intercept('/')
+        .as('getHomeResponse')
+        cy.visit('/')
+        cy.wait('@getHomeResponse', { timeout: 10000 })
+        .its('response.statusCode')
+        .should('eq', 200)
+        }
     featuredItemCarousel() { return cy.get(pageLocators.featuredItemCarousel); }
     leftArrowCarousel() { return cy.get(pageLocators.leftArrowCarousel); }
     rightArrowCarousel() { return cy.get(pageLocators.rightArrowCarousel); }
