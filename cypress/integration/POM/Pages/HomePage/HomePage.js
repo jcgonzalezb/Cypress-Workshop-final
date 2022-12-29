@@ -1,4 +1,3 @@
-// /Pages/HomePage/HomePage.js
 var pageLocators = {
     featuredItemCarousel: '.active > .d-block',
     leftArrowCarousel: '.carousel-control-prev-icon',
@@ -46,6 +45,18 @@ var pageLocators = {
     monitorAppleMonitor24Pic: ':nth-child(1) > .card > :nth-child(1) > .card-img-top'
     }
 
+var urls = {
+        firstImageCarousel: 'https://www.demoblaze.com/Samsung1.jpg',
+        secondImageCarousel: 'https://www.demoblaze.com/nexus1.jpg',
+        thirdImageCarousel: 'https://www.demoblaze.com/iphone1.jpg'
+    }
+
+var localPath = {
+        firstImageCarousel: 'C:/Users/Public/Downloads/Samsung1.jpg',
+        secondImageCarousel: 'C:/Users/Public/Downloads/nexus1.jpg',
+        thirdImageCarousel: 'C:/Users/Public/Downloads/iphone1.jpg'
+    }
+
     class HomePage {
     featuredItemCarousel() { return cy.get(pageLocators.featuredItemCarousel); }
     leftArrowCarousel() { return cy.get(pageLocators.leftArrowCarousel); }
@@ -53,6 +64,15 @@ var pageLocators = {
     carouselIndicatorZero() { return cy.get(pageLocators.carouselIndicatorZero); }
     carouselIndicatorOne() { return cy.get(pageLocators.carouselIndicatorOne); }
     carouselIndicatorTwo() { return cy.get(pageLocators.carouselIndicatorTwo); }
+    firstImageCarousel() { return cy.request({
+        url: urls.firstImageCarousel, encoding: 'binary',
+      }); }
+    secondImageCarousel() { return cy.request({
+        url: urls.secondImageCarousel, encoding: 'binary',
+      }); }
+    thirdImageCarousel() { return cy.request({
+        url: urls.thirdImageCarousel, encoding: 'binary',
+      }); }
     homeHeader() {return cy.get(pageLocators.homeHeader); }
     categoriesTitle() { return cy.get(pageLocators.categoriesTitle); }
     contactHeader() {return cy.get(pageLocators.contactHeader); }
@@ -91,15 +111,6 @@ var pageLocators = {
     monitorAppleMonitor24() { return cy.get(pageLocators.monitorAppleMonitor24); }
     monitorAppleMonitor24Pic() { return cy.get(pageLocators.monitorAppleMonitor24Pic); }
     monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
-
-    downloadSecondImage() { return cy.request({
-        url: 'https://www.demoblaze.com/nexus1.jpg',
-        encoding: 'binary',
-      }).then((response) => {
-        cy.writeFile('C:/Users/Public/Downloads/nexus1.jpg', response.body, 'binary')
-      }); }
-   
-
     
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
@@ -110,6 +121,15 @@ var pageLocators = {
     visibleCarouselIndicatorOne() { return this.carouselIndicatorOne().should('be.visible'); }
     clickCarouselIndicatorTwo() { return this.carouselIndicatorTwo().click(); }
     visibleCarouselIndicatorTwo() { return this.carouselIndicatorTwo().should('be.visible'); }
+    downloadFirstImageCarousel() { return this.firstImageCarousel().then((response) => {
+        cy.writeFile(localPath.firstImageCarousel, response.body, 'binary')
+      }); }
+    downloadSecondImageCarousel() { return this.secondImageCarousel().then((response) => {
+        cy.writeFile(localPath.secondImageCarousel, response.body, 'binary')
+      }); }   
+    downloadThirdImageCarousel() { return this.thirdImageCarousel().then((response) => {
+        cy.writeFile(localPath.thirdImageCarousel, response.body, 'binary')
+      }); }   
     clickHomeHeader() { return this.homeHeader().click(); }
     visibleCategoriesTitle() { return this.categoriesTitle().should('be.visible'); }
     clickContactHeader() { return this.contactHeader().click(); }

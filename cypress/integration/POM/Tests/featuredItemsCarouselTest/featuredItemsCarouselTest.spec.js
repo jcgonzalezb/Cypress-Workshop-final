@@ -44,11 +44,17 @@ Then('the image on the Carousel should be the third one on the Carousel', () => 
     HomePage.visibleCarouselIndicatorOne();
 });
 
-// Scenario 4 : The user could download the second image of the Featured Items Carousel
-When('the user moves the carousel to display the second image', () => {
+// Scenario 4 : The user could download the three images in the Featured Items Carousel
+When('the user moves the carousel to display the three images', () => {
     HomePage.clickCarouselIndicatorOne();
+    HomePage.clickCarouselIndicatorTwo();
+    HomePage.clickCarouselIndicatorZero();
 });
 
-Then('the image on the Carousel should be download to the local drive', () => {
-    HomePage.downloadSecondImage();
+Then('the images in the Carousel should be download to the local drive', () => {
+    HomePage.downloadFirstImageCarousel();
+    HomePage.clickCarouselIndicatorOne();
+    HomePage.downloadSecondImageCarousel();
+    HomePage.clickCarouselIndicatorTwo();
+    HomePage.downloadThirdImageCarousel();
     });
