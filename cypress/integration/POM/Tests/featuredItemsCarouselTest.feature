@@ -18,3 +18,8 @@ Feature: The user wants to check the images in the Featured Items Carousel
     When the user clicks two times on the right arrow of the Carousel
     Then the image on the Carousel should be the third one on the Carousel
 
+  Scenario: The user could download the second image of the Featured Items Carousel
+    When the user moves the carousel to display the second image
+    Then the image on the Carousel should be download to the local drive
+
+

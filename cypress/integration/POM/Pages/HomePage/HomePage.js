@@ -92,6 +92,13 @@ var pageLocators = {
     monitorAppleMonitor24Pic() { return cy.get(pageLocators.monitorAppleMonitor24Pic); }
     monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
 
+    downloadSecondImage() { return cy.request({
+        url: 'https://www.demoblaze.com/nexus1.jpg',
+        encoding: 'binary',
+      }).then((response) => {
+        cy.writeFile('C:/Users/Public/Downloads/nexus1.jpg', response.body, 'binary')
+      }); }
+   
 
     
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
