@@ -1,6 +1,9 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
 import HomePage from "../../Pages/HomePage/HomePage";
+import Iphone632gb from "../../Pages/Phones/Iphone632gb";
 import SamsungGalaxyS6 from "../../Pages/Phones/SamsungGalaxyS6";
+import MacBookAir from "../../Pages/Laptops/MacBookAir";
+import AppleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
@@ -72,9 +75,37 @@ When('the user selects different products from the store', () => {
     HomePage.clickPhoneSamsungGalaxyS6Pic();
     SamsungGalaxyS6.visibleProductName();
     SamsungGalaxyS6.textProductName();
+    SamsungGalaxyS6.visibleAddToCartButton();
     SamsungGalaxyS6.clickAddToCartButton();
-    SamsungGalaxyS6.clickCartHeader();
-
+    SamsungGalaxyS6.clickHomeHeader();
+    HomePage.clickPhonesCategory();
+    HomePage.visiblePhoneIphone632gb();
+    HomePage.textPhoneIphone632gb();
+    HomePage.clickPhoneIphone632gbPic();
+    Iphone632gb.visibleProductName();
+    Iphone632gb.textProductName();
+    Iphone632gb.visibleAddToCartButton();
+    Iphone632gb.clickAddToCartButton();
+    Iphone632gb.clickHomeHeader();
+    HomePage.clickLaptopsCategory();
+    HomePage.visibleLaptopMacBookAir();
+    HomePage.textLaptopMacBookAir();
+    HomePage.clickLaptopMacBookAirPic();
+    MacBookAir.visibleProductName();
+    MacBookAir.textProductName();
+    MacBookAir.visibleAddToCartButton();
+    MacBookAir.clickAddToCartButton();
+    MacBookAir.clickHomeHeader();
+    HomePage.clickMonitorsCategory();
+    HomePage.visibleMonitorAppleMonitor24();
+    HomePage.textMonitorAppleMonitor24();
+    HomePage.clickMonitorAppleMonitor24Pic();
+    AppleMonitor24.visibleProductName();
+    AppleMonitor24.textProductName();
+    AppleMonitor24.visibleAddToCartButton();
+    AppleMonitor24.clickAddToCartButton();
+    AppleMonitor24.clickHomeHeader();
+    HomePage.clickCartHeader();
 });
 
 And('removes one product from the cart', () => {

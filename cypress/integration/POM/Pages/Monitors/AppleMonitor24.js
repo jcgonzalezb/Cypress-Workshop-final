@@ -5,18 +5,18 @@ var pageLocators = {
     homeHeader: '.active > .nav-link'
     }
 
-    class SamsungGalaxyS6 {
+    class AppleMonitor24 {
     productName() { return cy.get(pageLocators.productName); }
     addToCartButton() { return cy.get(pageLocators.addToCartButton); }
     cartHeader() { return cy.get(pageLocators.cartHeader); }
     homeHeader() {return cy.get(pageLocators.homeHeader); }
 
     visibleProductName() { return this.productName().should('be.visible'); }
-    textProductName() { return this.productName().should('have.text', 'Samsung galaxy s6'); }
+    textProductName() { return this.productName().should('have.text', 'Apple monitor 24'); }
     visibleAddToCartButton() { return this.addToCartButton().should('be.visible'); }
     clickAddToCartButton() { return this.addToCartButton().click(); }
     clickHomeHeader() { return this.homeHeader().click(); }
     }
     
-    const samsungGalaxyS6 = new SamsungGalaxyS6();
-    export default samsungGalaxyS6;
+    const appleMonitor24 = new AppleMonitor24();
+    export default appleMonitor24;

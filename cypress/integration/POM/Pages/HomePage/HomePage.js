@@ -40,11 +40,10 @@ var pageLocators = {
     monitorsCategory: '[onclick="byCat(\'monitor\')"]',
     monitorAppleMonitor24: ':nth-child(1) > .card > .card-block > .card-title > .hrefch',
     monitorASUSFullHD: ':nth-child(2) > .card > .card-block > .card-title > .hrefch',
-    phoneSamsungGalaxyS6Pic: ':nth-child(1) > .card > :nth-child(1) > .card-img-top'
-
-
-
-
+    phoneSamsungGalaxyS6Pic: ':nth-child(1) > .card > :nth-child(1) > .card-img-top',
+    phoneIphone632gbPic: ':nth-child(5) > .card > :nth-child(1) > .card-img-top',
+    laptopMacBookAirPic: ':nth-child(3) > .card > :nth-child(1) > .card-img-top',
+    monitorAppleMonitor24Pic: ':nth-child(1) > .card > :nth-child(1) > .card-img-top'
     }
 
     class HomePage {
@@ -77,17 +76,20 @@ var pageLocators = {
     phoneNexus6() { return cy.get(pageLocators.phoneNexus6); }
     phoneSamsungGalaxyS7() { return cy.get(pageLocators.phoneSamsungGalaxyS7); }
     phoneIphone632gb() { return cy.get(pageLocators.phoneIphone632gb); }
+    phoneIphone632gbPic() { return cy.get(pageLocators.phoneIphone632gbPic); }
     phoneSonyXperiaZ5() { return cy.get(pageLocators.phoneSonyXperiaZ5); }
     phoneHTCOneM9() { return cy.get(pageLocators.phoneHTCOneM9); }
     laptopsCategory() { return cy.get(pageLocators.laptopsCategory); }
     laptopSonyVaioI5() { return cy.get(pageLocators.laptopSonyVaioI5); }
     laptopSonyVaioI7() { return cy.get(pageLocators.laptopSonyVaioI7); }
     laptopMacBookAir() { return cy.get(pageLocators.laptopMacBookAir); }
+    laptopMacBookAirPic() { return cy.get(pageLocators.laptopMacBookAirPic); }
     laptopDellI78gb() { return cy.get(pageLocators.laptopDellI78gb); }
     laptop2017Dell156Inch() { return cy.get(pageLocators.laptop2017Dell156Inch); }
     laptopMacBookPro() { return cy.get(pageLocators.laptopMacBookPro); }
     monitorsCategory() { return cy.get(pageLocators.monitorsCategory); }
     monitorAppleMonitor24() { return cy.get(pageLocators.monitorAppleMonitor24); }
+    monitorAppleMonitor24Pic() { return cy.get(pageLocators.monitorAppleMonitor24Pic); }
     monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
 
 
@@ -156,9 +158,10 @@ var pageLocators = {
     textMonitorAppleMonitor24() { return this.monitorAppleMonitor24().should('have.text', 'Apple monitor 24'); }
     visibleMonitorASUSFullHD() { return this.monitorASUSFullHD().should('be.visible'); }
     textMonitorASUSFullHD() { return this.monitorASUSFullHD().should('have.text', 'ASUS Full HD'); }
-
     clickPhoneSamsungGalaxyS6Pic() { return this.phoneSamsungGalaxyS6Pic().click(); }
-
+    clickPhoneIphone632gbPic() { return this.phoneIphone632gbPic().click(); }
+    clickLaptopMacBookAirPic() { return this.laptopMacBookAirPic().click(); }
+    clickMonitorAppleMonitor24Pic() { return this.monitorAppleMonitor24Pic().click(); }
 
 }
     
