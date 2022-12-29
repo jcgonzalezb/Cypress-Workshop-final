@@ -7,6 +7,11 @@ import AppleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
 import CartPage from "../../Pages/CartPage/CartPage";
 
 const newName = 'Ana'
+const newCountry = 'United States'
+const newCity = 'Austin'
+const newCard = '1234567'
+const newMonth = '03'
+const newYear = '25'
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
@@ -118,11 +123,17 @@ And('removes one product from the cart', () => {
 Then('purchases the products from the store', () => {
     CartPage.clickPlaceOrderButton();
     CartPage.orderModalHeaderDisplay();
-    //CartPage.visibleOrderModal();
-    //CartPage.visibleOrderModalHeader();
-    //CartPage.visibleOrderModalLabel();
-    CartPage.visibleInputName();
-    CartPage.cleanInputName();
-    CartPage.purchaseAddName(newName);
+    CartPage.orderModalLabelDisplay();
+    //CartPage.visibleInputName();
+
+    //CartPage.cleanInputName();
+    CartPage.purchaseInputName(newName);
+    CartPage.clickInputName();
+    //CartPage.visibleInputCountry();
+    //CartPage.inputCountryDisplay();
+    //CartPage.cleanInputCountry();
+    //CartPage.clickPlaceOrderButton();
+    CartPage.purchaseInputCountry(newCountry);
+    CartPage.clickInputCountry();
     
 });
