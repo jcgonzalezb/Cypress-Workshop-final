@@ -4,6 +4,9 @@ import Iphone632gb from "../../Pages/Phones/Iphone632gb";
 import SamsungGalaxyS6 from "../../Pages/Phones/SamsungGalaxyS6";
 import MacBookAir from "../../Pages/Laptops/MacBookAir";
 import AppleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
+import CartPage from "../../Pages/CartPage/CartPage";
+
+const newName = 'Ana'
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
@@ -105,13 +108,21 @@ When('the user selects different products from the store', () => {
     AppleMonitor24.visibleAddToCartButton();
     AppleMonitor24.clickAddToCartButton();
     AppleMonitor24.clickHomeHeader();
-    HomePage.clickCartHeader();
 });
 
 And('removes one product from the cart', () => {
-
+    HomePage.clickCartHeader();
+    CartPage.clickDeleteFirstItem();
 });
 
 Then('purchases the products from the store', () => {
-
+    CartPage.clickPlaceOrderButton();
+    CartPage.orderModalHeaderDisplay();
+    //CartPage.visibleOrderModal();
+    //CartPage.visibleOrderModalHeader();
+    //CartPage.visibleOrderModalLabel();
+    CartPage.visibleInputName();
+    CartPage.cleanInputName();
+    CartPage.purchaseAddName(newName);
+    
 });
