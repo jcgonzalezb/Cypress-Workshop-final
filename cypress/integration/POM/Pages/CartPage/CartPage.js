@@ -27,9 +27,6 @@ var pageLocators = {
     inputMonth() { return cy.get(pageLocators.inputMonth); }
     inputYear() { return cy.get(pageLocators.inputYear); }
     purchaseButton() { return cy.get(pageLocators.purchaseButton); }
-    startFixture() { return cy.fixture('buyerInfo').then((data) => {
-        buyerInfoData = data
-    }); }
 
     visibleProductsTitle() { return this.productsTitle().should('be.visible'); }
     textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }
@@ -42,20 +39,19 @@ var pageLocators = {
     clickInputName() { return this.inputName().click(); }
     cleanInputName() { return this.inputName().clear(); }
     purchaseInputName(name) { return this.inputName().type(name); }
-
     inputCountryDisplay() { return this.inputCountry().should('not.have.css', 'display', 'none'); }
     visibleInputCountry() { return this.inputCountry().should('be.visible'); }
     clickInputCountry() { return this.inputCountry().click(); }
     cleanInputCountry() { return this.inputCountry().clear(); }
     purchaseInputCountry(country) { return this.inputCountry().type(country); }
-    purchaseInputCity(city) { return this.inputCountry().type(city); }
-
-
-
-
-
-
-
+    cleanInputCity() { return this.inputCity().clear(); }
+    purchaseInputCity(city) { return this.inputCity().type(city); }
+    cleanInputCard() { return this.inputCard().clear(); }
+    purchaseInputCard(card) { return this.inputCard().type(card); }
+    cleanInputMonth() { return this.inputMonth().clear(); }
+    purchaseInputMonth(month) { return this.inputMonth().type(month); }
+    cleanInputYear() { return this.inputYear().clear(); }
+    purchaseInputYear(year) { return this.inputYear().type(year); }
     }
     
     const cartPage = new CartPage();

@@ -11,7 +11,6 @@ let buyerInfo = ''
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
     HomePage.waitForHomePageSuccessfulResponse();
-    //CartPage.startFixture();
     cy.fixture('buyerInfo.json').then((data) => {
         buyerInfo = data;
     });
@@ -120,8 +119,6 @@ And('removes one product from the cart', () => {
 });
 
 Then('purchases the products from the store', () => {
-
-
     CartPage.clickPlaceOrderButton();
     CartPage.orderModalHeaderDisplay();
     CartPage.orderModalLabelDisplay();
@@ -129,14 +126,14 @@ Then('purchases the products from the store', () => {
     //CartPage.cleanInputName();
     //CartPage.clickParentModal();
     CartPage.purchaseInputName(buyerInfo.newName);
-    //CartPage.clickParentModal();
-    //CartPage.clickInputName();
     //CartPage.visibleInputCountry();
-    //CartPage.inputCountryDisplay();
-    //CartPage.cleanInputCountry();
-    //CartPage.clickPlaceOrderButton();
     CartPage.purchaseInputCountry(buyerInfo.newCountry);
     //CartPage.clickInputCountry();
     CartPage.purchaseInputCity(buyerInfo.newCity);
-
+    CartPage.cleanInputCard();
+    CartPage.purchaseInputCard(buyerInfo.newCard);
+    CartPage.cleanInputMonth();
+    CartPage.purchaseInputMonth(buyerInfo.newMonth);
+    CartPage.cleanInputYear();
+    CartPage.purchaseInputYear(buyerInfo.newYear);
 });
