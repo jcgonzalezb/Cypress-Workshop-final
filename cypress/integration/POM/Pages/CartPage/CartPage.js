@@ -1,7 +1,10 @@
 // /Pages/CartPage/CartPage.js
 var pageLocators = {
     productsTitle: '.col-lg-8 > h2',
-    deleteFirstItem: '#tbodyid > :nth-child(1) > :nth-child(4) > a',
+    cartFirstItem: '#tbodyid > :nth-child(1) > :nth-child(4) > a',
+    cartSecondItem: '#tbodyid > :nth-child(2) > :nth-child(4) > a',
+    cartThirdItem: '#tbodyid > :nth-child(3) > :nth-child(4) > a',
+    cartLastItem: '#tbodyid > :nth-child(4) > :nth-child(4) > a',
     placeOrderButton: '.col-lg-1 > .btn',
     orderModalHeader: '#orderModal > .modal-dialog > .modal-content > .modal-header',
     orderModalLabel: '#orderModalLabel',
@@ -11,13 +14,16 @@ var pageLocators = {
     inputCard: '#card',
     inputMonth: '#month',
     inputYear: '#year',
-    purchaseButton: '#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary'
+    purchaseButton: '#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary',
     }
 
     class CartPage {
     productsTitle() { return cy.get(pageLocators.productsTitle); }
-    deleteFirstItem() { return cy.get(pageLocators.deleteFirstItem); }
-    placeOrderButton() { return cy.get(pageLocators.placeOrderButton); }
+    cartFirstItem() { return cy.get(pageLocators.cartFirstItem); }
+    cartSecondItem() { return cy.get(pageLocators.cartSecondItem); }
+    cartThirdItem() { return cy.get(pageLocators.cartThirdItem); }
+    cartLastItem() { return cy.get(pageLocators.cartLastItem); }
+    placeOrderButton() { return cy.get(pageLocators.placeOrderButton, { timeout: 20000 }); }
     orderModalHeader() { return cy.get(pageLocators.orderModalHeader); }
     orderModalLabel() { return cy.get(pageLocators.orderModalLabel); }
     inputName() { return cy.get(pageLocators.inputName); }
@@ -27,31 +33,21 @@ var pageLocators = {
     inputMonth() { return cy.get(pageLocators.inputMonth); }
     inputYear() { return cy.get(pageLocators.inputYear); }
     purchaseButton() { return cy.get(pageLocators.purchaseButton); }
-
-    visibleProductsTitle() { return this.productsTitle().should('be.visible'); }
-    textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }
-    clickDeleteFirstItem() { return this.deleteFirstItem().click(); }
+    
+    clickDeleteFirstItem() { return this.cartFirstItem().click(); }
+    visibleCartFirstItem() { return this.cartFirstItem().should('be.visible'); }
+    visibleCartSecondItem() { return this.cartSecondItem().should('be.visible'); }
+    visibleCartThirdItem() { return this.cartThirdItem().should('be.visible'); }
+    notExistCartLastItem() { return this.cartLastItem().should('not.exist'); }
+    visiblePlaceOrderButton() { return this.placeOrderButton().should('be.visible'); }
     clickPlaceOrderButton() { return this.placeOrderButton().click(); }
-    clickParentModal() {return this.orderModalHeader().parent().parent().parent().click() }
-    orderModalHeaderDisplay() { return this.orderModalHeader().should('not.have.css', 'display', 'none'); }
-    orderModalLabelDisplay() { return this.orderModalLabel().should('not.have.css', 'display', 'none'); }
-    visibleInputName() { return this.inputName().should('be.visible'); }
-    clickInputName() { return this.inputName().click(); }
-    cleanInputName() { return this.inputName().clear(); }
-    purchaseInputName(name) { return this.inputName().type(name); }
-    inputCountryDisplay() { return this.inputCountry().should('not.have.css', 'display', 'none'); }
-    visibleInputCountry() { return this.inputCountry().should('be.visible'); }
-    clickInputCountry() { return this.inputCountry().click(); }
-    cleanInputCountry() { return this.inputCountry().clear(); }
-    purchaseInputCountry(country) { return this.inputCountry().type(country); }
-    cleanInputCity() { return this.inputCity().clear(); }
-    purchaseInputCity(city) { return this.inputCity().type(city); }
-    cleanInputCard() { return this.inputCard().clear(); }
-    purchaseInputCard(card) { return this.inputCard().type(card); }
-    cleanInputMonth() { return this.inputMonth().clear(); }
-    purchaseInputMonth(month) { return this.inputMonth().type(month); }
-    cleanInputYear() { return this.inputYear().clear(); }
-    purchaseInputYear(year) { return this.inputYear().type(year); }
+    purchaseInputName(name) { this.inputName().clear().type(name); }
+    purchaseInputCountry(country) { this.inputCountry().clear().type(country); }
+    purchaseInputCity(city) { return this.inputCity().clear().type(city); }
+    purchaseInputCard(card) { return this.inputCard().clear().type(card); }
+    purchaseInputMonth(month) { return this.inputMonth().clear().type(month); }
+    purchaseInputYear(year) { return this.inputYear().clear().type(year); }
+    
     }
     
     const cartPage = new CartPage();

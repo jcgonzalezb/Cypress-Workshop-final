@@ -116,24 +116,20 @@ When('the user selects different products from the store', () => {
 And('removes one product from the cart', () => {
     homePage.clickCartHeader();
     cartPage.clickDeleteFirstItem();
+    cy.reload();
+    cartPage.visibleCartFirstItem();
+    cartPage.visibleCartSecondItem();
+    cartPage.visibleCartThirdItem();
+    cartPage.notExistCartLastItem();
 });
 
 Then('purchases the products from the store', () => {
+    cartPage.visiblePlaceOrderButton();
     cartPage.clickPlaceOrderButton();
-    cartPage.orderModalHeaderDisplay();
-    cartPage.orderModalLabelDisplay();
-    //CartPage.visibleInputName();
-    //CartPage.cleanInputName();
-    //CartPage.clickParentModal();
     cartPage.purchaseInputName(buyerInfo.newName);
-    //CartPage.visibleInputCountry();
     cartPage.purchaseInputCountry(buyerInfo.newCountry);
-    //CartPage.clickInputCountry();
     cartPage.purchaseInputCity(buyerInfo.newCity);
-    cartPage.cleanInputCard();
     cartPage.purchaseInputCard(buyerInfo.newCard);
-    cartPage.cleanInputMonth();
     cartPage.purchaseInputMonth(buyerInfo.newMonth);
-    cartPage.cleanInputYear();
     cartPage.purchaseInputYear(buyerInfo.newYear);
 });
