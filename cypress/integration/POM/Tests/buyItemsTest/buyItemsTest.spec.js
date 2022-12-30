@@ -1,16 +1,16 @@
 import { Given, When, Then, And } from "cypress-cucumber-preprocessor/steps";
-import HomePage from "../../Pages/HomePage/HomePage";
-import Iphone632gb from "../../Pages/Phones/Iphone632gb";
-import SamsungGalaxyS6 from "../../Pages/Phones/SamsungGalaxyS6";
-import MacBookAir from "../../Pages/Laptops/MacBookAir";
-import AppleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
-import CartPage from "../../Pages/CartPage/CartPage";
+import homePage from "../../Pages/HomePage/HomePage";
+import iphone632gb from "../../Pages/Phones/Iphone632gb";
+import samsungGalaxyS6 from "../../Pages/Phones/SamsungGalaxyS6";
+import macBookAir from "../../Pages/Laptops/MacBookAir";
+import appleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
+import cartPage from "../../Pages/CartPage/CartPage";
 
 let buyerInfo = ''
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
-    HomePage.waitForHomePageSuccessfulResponse();
+    homePage.waitForHomePageSuccessfulResponse();
     cy.fixture('buyerInfo.json').then((data) => {
         buyerInfo = data;
     });
@@ -19,121 +19,121 @@ Given('the user navigates the Product Store Home page', () => {
 
 // Scenario 1 : The phones category shows all the phones in the store
 When('the user selects the Phones category', () => {
-    HomePage.clickPhonesCategory();
+    homePage.clickPhonesCategory();
 });
 
 Then('all the phones in the store should be visible', () => {
-    HomePage.visiblePhoneSamsungGalaxyS6();
-    HomePage.textPhoneSamsungGalaxyS6();
-    HomePage.visiblePhoneNokiaLumia1520();
-    HomePage.textPhoneNokiaLumia1520();
-    HomePage.visiblePhoneNexus6();
-    HomePage.textPhoneNexus6();
-    HomePage.visiblePhoneSamsungGalaxyS7();
-    HomePage.textPhoneSamsungGalaxyS7();
-    HomePage.visiblePhoneIphone632gb();
-    HomePage.textPhoneIphone632gb();
-    HomePage.visiblePhoneSonyXperiaZ5();
-    HomePage.textPhoneSonyXperiaZ5();
-    HomePage.visiblePhoneHTCOneM9();
-    HomePage.textPhoneHTCOneM9();
+    homePage.visiblePhoneSamsungGalaxyS6();
+    homePage.textPhoneSamsungGalaxyS6();
+    homePage.visiblePhoneNokiaLumia1520();
+    homePage.textPhoneNokiaLumia1520();
+    homePage.visiblePhoneNexus6();
+    homePage.textPhoneNexus6();
+    homePage.visiblePhoneSamsungGalaxyS7();
+    homePage.textPhoneSamsungGalaxyS7();
+    homePage.visiblePhoneIphone632gb();
+    homePage.textPhoneIphone632gb();
+    homePage.visiblePhoneSonyXperiaZ5();
+    homePage.textPhoneSonyXperiaZ5();
+    homePage.visiblePhoneHTCOneM9();
+    homePage.textPhoneHTCOneM9();
 });
 
 
 // Scenario 2 : The laptops category shows all the laptops in the store
 When('the user selects the Laptops category', () => {
-    HomePage.clickLaptopsCategory();
+    homePage.clickLaptopsCategory();
 });
 
 Then('all the laptops in the store should be visible', () => {
-    HomePage.visibleLaptopSonyVaioI5();
-    HomePage.textLaptopSonyVaioI5();
-    HomePage.visibleLaptopSonyVaioI7();
-    HomePage.textLaptopSonyVaioI7();
-    HomePage.visibleLaptopMacBookAir();
-    HomePage.textLaptopMacBookAir();
-    HomePage.visibleLaptopDellI78gb();
-    HomePage.textLaptopDellI78gb();
-    HomePage.visibleLaptop2017Dell156Inch();
-    HomePage.textLaptop2017Dell156Inch();
-    HomePage.visibleLaptopMacBookPro();
-    HomePage.textLaptopMacBookPro();
+    homePage.visibleLaptopSonyVaioI5();
+    homePage.textLaptopSonyVaioI5();
+    homePage.visibleLaptopSonyVaioI7();
+    homePage.textLaptopSonyVaioI7();
+    homePage.visibleLaptopMacBookAir();
+    homePage.textLaptopMacBookAir();
+    homePage.visibleLaptopDellI78gb();
+    homePage.textLaptopDellI78gb();
+    homePage.visibleLaptop2017Dell156Inch();
+    homePage.textLaptop2017Dell156Inch();
+    homePage.visibleLaptopMacBookPro();
+    homePage.textLaptopMacBookPro();
 });
 
 
 // Scenario 3 : The monitors category shows all the monitors in the store
 When('the user selects the Monitors category', () => {
-    HomePage.clickMonitorsCategory();
+    homePage.clickMonitorsCategory();
 });
 
 Then('all the monitors in the store should be visible', () => {
-    HomePage.visibleMonitorAppleMonitor24();
-    HomePage.textMonitorAppleMonitor24();
-    HomePage.visibleMonitorASUSFullHD();
-    HomePage.textMonitorASUSFullHD();
+    homePage.visibleMonitorAppleMonitor24();
+    homePage.textMonitorAppleMonitor24();
+    homePage.visibleMonitorASUSFullHD();
+    homePage.textMonitorASUSFullHD();
 });
 
 // Scenario 4 : The user selects different products and makes a purchase
 When('the user selects different products from the store', () => {
-    HomePage.clickPhonesCategory();
-    HomePage.visiblePhoneSamsungGalaxyS6();
-    HomePage.textPhoneSamsungGalaxyS6();
-    HomePage.clickPhoneSamsungGalaxyS6Pic();
-    SamsungGalaxyS6.visibleProductName();
-    SamsungGalaxyS6.textProductName();
-    SamsungGalaxyS6.visibleAddToCartButton();
-    SamsungGalaxyS6.clickAddToCartButton();
-    SamsungGalaxyS6.clickHomeHeader();
-    HomePage.clickPhonesCategory();
-    HomePage.visiblePhoneIphone632gb();
-    HomePage.textPhoneIphone632gb();
-    HomePage.clickPhoneIphone632gbPic();
-    Iphone632gb.visibleProductName();
-    Iphone632gb.textProductName();
-    Iphone632gb.visibleAddToCartButton();
-    Iphone632gb.clickAddToCartButton();
-    Iphone632gb.clickHomeHeader();
-    HomePage.clickLaptopsCategory();
-    HomePage.visibleLaptopMacBookAir();
-    HomePage.textLaptopMacBookAir();
-    HomePage.clickLaptopMacBookAirPic();
-    MacBookAir.visibleProductName();
-    MacBookAir.textProductName();
-    MacBookAir.visibleAddToCartButton();
-    MacBookAir.clickAddToCartButton();
-    MacBookAir.clickHomeHeader();
-    HomePage.clickMonitorsCategory();
-    HomePage.visibleMonitorAppleMonitor24();
-    HomePage.textMonitorAppleMonitor24();
-    HomePage.clickMonitorAppleMonitor24Pic();
-    AppleMonitor24.visibleProductName();
-    AppleMonitor24.textProductName();
-    AppleMonitor24.visibleAddToCartButton();
-    AppleMonitor24.clickAddToCartButton();
-    AppleMonitor24.clickHomeHeader();
+    homePage.clickPhonesCategory();
+    homePage.visiblePhoneSamsungGalaxyS6();
+    homePage.textPhoneSamsungGalaxyS6();
+    homePage.clickPhoneSamsungGalaxyS6Pic();
+    samsungGalaxyS6.visibleProductName();
+    samsungGalaxyS6.textProductName();
+    samsungGalaxyS6.visibleAddToCartButton();
+    samsungGalaxyS6.clickAddToCartButton();
+    samsungGalaxyS6.clickHomeHeader();
+    homePage.clickPhonesCategory();
+    homePage.visiblePhoneIphone632gb();
+    homePage.textPhoneIphone632gb();
+    homePage.clickPhoneIphone632gbPic();
+    iphone632gb.visibleProductName();
+    iphone632gb.textProductName();
+    iphone632gb.visibleAddToCartButton();
+    iphone632gb.clickAddToCartButton();
+    iphone632gb.clickHomeHeader();
+    homePage.clickLaptopsCategory();
+    homePage.visibleLaptopMacBookAir();
+    homePage.textLaptopMacBookAir();
+    homePage.clickLaptopMacBookAirPic();
+    macBookAir.visibleProductName();
+    macBookAir.textProductName();
+    macBookAir.visibleAddToCartButton();
+    macBookAir.clickAddToCartButton();
+    macBookAir.clickHomeHeader();
+    homePage.clickMonitorsCategory();
+    homePage.visibleMonitorAppleMonitor24();
+    homePage.textMonitorAppleMonitor24();
+    homePage.clickMonitorAppleMonitor24Pic();
+    appleMonitor24.visibleProductName();
+    appleMonitor24.textProductName();
+    appleMonitor24.visibleAddToCartButton();
+    appleMonitor24.clickAddToCartButton();
+    appleMonitor24.clickHomeHeader();
 });
 
 And('removes one product from the cart', () => {
-    HomePage.clickCartHeader();
-    CartPage.clickDeleteFirstItem();
+    homePage.clickCartHeader();
+    cartPage.clickDeleteFirstItem();
 });
 
 Then('purchases the products from the store', () => {
-    CartPage.clickPlaceOrderButton();
-    CartPage.orderModalHeaderDisplay();
-    CartPage.orderModalLabelDisplay();
+    cartPage.clickPlaceOrderButton();
+    cartPage.orderModalHeaderDisplay();
+    cartPage.orderModalLabelDisplay();
     //CartPage.visibleInputName();
     //CartPage.cleanInputName();
     //CartPage.clickParentModal();
-    CartPage.purchaseInputName(buyerInfo.newName);
+    cartPage.purchaseInputName(buyerInfo.newName);
     //CartPage.visibleInputCountry();
-    CartPage.purchaseInputCountry(buyerInfo.newCountry);
+    cartPage.purchaseInputCountry(buyerInfo.newCountry);
     //CartPage.clickInputCountry();
-    CartPage.purchaseInputCity(buyerInfo.newCity);
-    CartPage.cleanInputCard();
-    CartPage.purchaseInputCard(buyerInfo.newCard);
-    CartPage.cleanInputMonth();
-    CartPage.purchaseInputMonth(buyerInfo.newMonth);
-    CartPage.cleanInputYear();
-    CartPage.purchaseInputYear(buyerInfo.newYear);
+    cartPage.purchaseInputCity(buyerInfo.newCity);
+    cartPage.cleanInputCard();
+    cartPage.purchaseInputCard(buyerInfo.newCard);
+    cartPage.cleanInputMonth();
+    cartPage.purchaseInputMonth(buyerInfo.newMonth);
+    cartPage.cleanInputYear();
+    cartPage.purchaseInputYear(buyerInfo.newYear);
 });
