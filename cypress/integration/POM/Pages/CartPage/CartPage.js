@@ -27,6 +27,9 @@ var pageLocators = {
     inputMonth() { return cy.get(pageLocators.inputMonth); }
     inputYear() { return cy.get(pageLocators.inputYear); }
     purchaseButton() { return cy.get(pageLocators.purchaseButton); }
+    startFixture() { return cy.fixture('buyerInfo').then((data) => {
+        buyerInfoData = data
+    }); }
 
     visibleProductsTitle() { return this.productsTitle().should('be.visible'); }
     textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }

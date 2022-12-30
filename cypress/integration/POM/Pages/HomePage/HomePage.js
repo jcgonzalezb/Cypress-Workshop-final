@@ -119,7 +119,9 @@ var localPath = {
     monitorAppleMonitor24() { return cy.get(pageLocators.monitorAppleMonitor24); }
     monitorAppleMonitor24Pic() { return cy.get(pageLocators.monitorAppleMonitor24Pic); }
     monitorASUSFullHD() { return cy.get(pageLocators.monitorASUSFullHD); }
-    
+
+
+
     visibleFeaturedItemCarousel() { return this.featuredItemCarousel().should('be.visible'); }
     clickLeftArrowCarousel() { return this.leftArrowCarousel().click(); }
     clickRightArrowCarousel() { return this.rightArrowCarousel().click(); }

@@ -6,16 +6,15 @@ import MacBookAir from "../../Pages/Laptops/MacBookAir";
 import AppleMonitor24 from "../../Pages/Monitors/AppleMonitor24";
 import CartPage from "../../Pages/CartPage/CartPage";
 
-const newName = 'Ana'
-const newCountry = 'United States'
-const newCity = 'Austin'
-const newCard = '1234567'
-const newMonth = '03'
-const newYear = '25'
+let buyerInfo = ''
 
 // Background: The user navigates the Product Store Home page
 Given('the user navigates the Product Store Home page', () => {
     HomePage.waitForHomePageSuccessfulResponse();
+    //CartPage.startFixture();
+    cy.fixture('buyerInfo.json').then((data) => {
+        buyerInfo = data;
+    });
 });
 
 
@@ -121,20 +120,23 @@ And('removes one product from the cart', () => {
 });
 
 Then('purchases the products from the store', () => {
+
+
     CartPage.clickPlaceOrderButton();
     CartPage.orderModalHeaderDisplay();
     CartPage.orderModalLabelDisplay();
     //CartPage.visibleInputName();
     //CartPage.cleanInputName();
     //CartPage.clickParentModal();
-    CartPage.purchaseInputName(newName);
+    CartPage.purchaseInputName(buyerInfo.newName);
     //CartPage.clickParentModal();
     //CartPage.clickInputName();
     //CartPage.visibleInputCountry();
     //CartPage.inputCountryDisplay();
     //CartPage.cleanInputCountry();
     //CartPage.clickPlaceOrderButton();
-    CartPage.purchaseInputCountry(newCountry);
+    CartPage.purchaseInputCountry(buyerInfo.newCountry);
     //CartPage.clickInputCountry();
-    CartPage.purchaseInputCity(newCity);
+    CartPage.purchaseInputCity(buyerInfo.newCity);
+
 });
