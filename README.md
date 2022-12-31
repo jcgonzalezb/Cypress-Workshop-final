@@ -61,7 +61,6 @@ $   cd Cypress-Workshop-final
 ```
 $   npm init -y
 $   npm install --save-dev cypress@9.7.0 cypress-cucumber-preprocessor
-
 ```
 
 4. To verify the installation, run the following command:
@@ -82,7 +81,6 @@ The following message should be visible to be sure that Cypress was installed pr
 $   npm install --save-dev @shelex/cypress-allure-plugin
 
 $   npm install -g allure-commandline --save-dev
-
 ```
 
 6. To verify the installation, run the following command:
@@ -91,7 +89,7 @@ $   npm install -g allure-commandline --save-dev
 $   npx allure
 ```
 
-7. For this particular project, some configurations should be done. Go to cypress.json file and add the following information.
+7. For this particular project, some configurations should be done. Go to cypress.json file and add the following information:
 
 ```
 {
@@ -162,7 +160,7 @@ According to the objectives described above, the three tests created are:
 - Header Test
 - Buy Items Test
 
-1. To run the tests on the terminal in Cypress without the reports, access the 'Cypress-Workshop-final' directory and run the following command:
+1. To run the tests on the terminal in Cypress without creating the reports, access the 'Cypress-Workshop-final' directory and run the following command:
 
 ```
 $   npm run dev:test
