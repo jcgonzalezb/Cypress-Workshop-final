@@ -15,6 +15,8 @@ var pageLocators = {
     inputMonth: '#month',
     inputYear: '#year',
     purchaseButton: '#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-primary',
+    confirmButton: '.confirm',
+    closeButton: '#orderModal > .modal-dialog > .modal-content > .modal-footer > .btn-secondary'
     }
 
     class CartPage {
@@ -33,6 +35,8 @@ var pageLocators = {
     inputMonth() { return cy.get(pageLocators.inputMonth); }
     inputYear() { return cy.get(pageLocators.inputYear); }
     purchaseButton() { return cy.get(pageLocators.purchaseButton); }
+    confirmButton() { return cy.get(pageLocators.confirmButton); }
+    closeButton() { return cy.get(pageLocators.closeButton); }
     
     clickDeleteFirstItem() { return this.cartFirstItem().click(); }
     visibleCartFirstItem() { return this.cartFirstItem().should('be.visible'); }
@@ -47,7 +51,10 @@ var pageLocators = {
     purchaseInputCard(card) { return this.inputCard().clear().type(card); }
     purchaseInputMonth(month) { return this.inputMonth().clear().type(month); }
     purchaseInputYear(year) { return this.inputYear().clear().type(year); }
-    
+    clickPurchaseButton() { return this.purchaseButton().click(); }
+    clickConfirmButton() { return this.confirmButton().click(); }
+    noVisibleConfirmButton() { return this.confirmButton().should('not.be.visible'); }
+    clickCloseButton() { return this.closeButton().click(); }
     }
     
     const cartPage = new CartPage();

@@ -132,4 +132,8 @@ Then('purchases the products from the store', () => {
     cartPage.purchaseInputCard(buyerInfo.newCard);
     cartPage.purchaseInputMonth(buyerInfo.newMonth);
     cartPage.purchaseInputYear(buyerInfo.newYear);
+    cartPage.clickPurchaseButton();
+    cartPage.clickConfirmButton();
+    cartPage.noVisibleConfirmButton();
+    cartPage.clickCloseButton();
 });
