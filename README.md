@@ -30,12 +30,18 @@ organization.
 
 ## Table of content
 
+* [Architecture](#architecture)
 * [Environment](#environment)
 * [Installation](#installation)
 * [Usage](#usage)
 * [Bugs](#bugs)
 * [Author](#author)
 * [License](#license)
+
+
+##  Architecture
+
+![architecture diagram of the framework](diagram/Arquitecture_Diagram_Testing.png)
 
 ##  Environment
 This project was developed on Visual Studio Code 1.74.2, Node.js 18.12.1, Cypress 9.7.0, Allure 2.13.8 and cypress-cucumber-preprocessor 4.3.1.
