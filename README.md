@@ -157,6 +157,12 @@ Cypress.on('uncaught:exception', (err, runnable) => {
 
 ## Usage
 
+According to the objectives described above, the three tests created are:
+
+- Featured Items Carousel Test
+- Header Test
+- Buy Items Test
+
 1. To run the tests on the terminal in Cypress without the reports, access the 'Cypress-Workshop-final' directory and run the following command:
 
 ```
@@ -184,7 +190,13 @@ The terminal should display the results of the all the tests.
 
 ```
 
-2. To run the tests on the terminal in Cypress with the reports, access the 'Cypress-Workshop-final' directory and run the following command:
+2. To run the tests on a browser and check each one of them in detail, run the following command:
+
+```
+$   npx cypress open
+```
+
+3. To run the tests on the terminal in Cypress with the reports, access the 'Cypress-Workshop-final' directory and run the following command:
 
 ```
 $   npx cypress run --env allure=true
@@ -192,12 +204,11 @@ $   npx cypress run --env allure=true
 
 After the execution is done, the folder 'allure-results' was created.
 
-3. To generate the reports, run the following command:
+4. To generate the reports, run the following command:
 
 ```
 $   allure serve allure-results/
 ```
-
 
 ## Bugs
 
