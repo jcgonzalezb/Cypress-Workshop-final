@@ -1,0 +1,30 @@
+{
+  "name": "cypress-workshop-final",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev:test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jcgonzalezb/Cypress-Workshop-final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jcgonzalezb/Cypress-Workshop-final/issues"
+  },
+  "homepage": "https://github.com/jcgonzalezb/Cypress-Workshop-final#readme",
+  "devDependencies": {
+    "@shelex/cypress-allure-plugin": "^2.34.0",
+    "cypress": "^9.7.0",
+    "cypress-cucumber-preprocessor": "^4.3.1"
+  },
+  "cypress-cucumber-preprocessor": {
+    "nonGlobalStepDefinitions": true,
+    "filterSpecs": true
+  }
+}
