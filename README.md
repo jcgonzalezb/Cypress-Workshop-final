@@ -13,17 +13,16 @@ clean coding best practices and using cypress (any version), cucumber, and allur
 scenarios.
 
 3. Test the categories Selection, product Selection, Adding product to cart, Buying cart,
-Removing element from cart. All of the defined scenarios for these functionalities should
+remove elements from the cart. All of the defined scenarios for these functionalities should
 be on a feature.
 
 Rules:
 - The exercise must be delivered using a new, personal github repository (globant github
 or public github), Good git practices should be used.
-- The framework should be organized using best practices, and following what suits best
-to the software under test. All architectural decisions should be correctly fundamented.
-An architecture diagram of the framework must be included on the repo.
+- The framework should be organized using best practices and following what suits best the software under test. All architectural decisions should be correctly supported.
+An architecture diagram of the framework must be included in the repo.
 - All defined scenarios must be tagged in any way you decide, including at least tags for
-organization, and for different suites (regression, smoke, sanity). Tags for using hooks
+organization, and different suites (regression, smoke, sanity). Tags for using hooks
 are optional.
 - The framework must include at least the use of: cy.request, cy.intercept, POM, fixtures.
 - Test cases to implement should be designed following best practices and correct
@@ -169,7 +168,7 @@ According to the objectives described above, the three tests created are:
 $   npm run dev:test
 ```
 
-The terminal should display the results of the all the tests.
+The terminal should display the results of all the tests.
 
 ```
 ====================================================================================================
