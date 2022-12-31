@@ -43,7 +43,7 @@ This project was developed on Visual Studio Code 1.74.2, Node.js 18.12.1, Cypres
 
 ## Installation
 
-Before cloning the reposity, it is necessary to install Node.js version 16 or higher.
+Before cloning the repository, it is necessary to install Node.js version 16 or higher.
 
 1. Clone this repository in the folder of your choose
 
@@ -71,7 +71,7 @@ $   npm install --save-dev cypress@9.7.0 cypress-cucumber-preprocessor
 $   npx cypress verify
 ```
 
-The following message should be visible to be sure that Cypress was intalled properly.
+The following message should be visible to be sure that Cypress was installed properly.
 
 ```
 ✔  Verified Cypress! C:\Users\juancamilo.gonzalez\AppData\Local\Cypress\Cache\9.7.0\Cypress
