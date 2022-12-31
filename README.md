@@ -1,7 +1,3 @@
-# Cypress-Workshop-final
-
-Testing 2
-
 # Cypress Workshop final exercise
 
 > This project is a program which allows basic tests on the Demoblaze web page.
