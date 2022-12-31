@@ -38,6 +38,8 @@ class CartPage {
   confirmButton () { return cy.get(pageLocators.confirmButton) }
   closeButton () { return cy.get(pageLocators.closeButton) }
 
+  visibleProductsTitle() { return this.productsTitle().should('be.visible'); }
+  textProductsTitle() { return this.productsTitle().should('have.text', 'Products'); }
   clickDeleteFirstItem () { return this.cartFirstItem().click() }
   visibleCartFirstItem () { return this.cartFirstItem().should('be.visible') }
   visibleCartSecondItem () { return this.cartSecondItem().should('be.visible') }
